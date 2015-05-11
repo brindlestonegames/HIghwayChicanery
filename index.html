@@ -1,0 +1,44 @@
+<!doctype html> 
+<html lang="en"> 
+	<head> 
+		<script type="text/javascript">
+		WebFontConfig = {
+			google: { families: [ 'Oswald::latin' ] }
+		};
+		(function() {
+			var wf = document.createElement('script');
+			wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+				'://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+			wf.type = 'text/javascript';
+			wf.async = 'true';
+			var s = document.getElementsByTagName('script')[0];
+			s.parentNode.insertBefore(wf, s);
+		})(); </script>
+		<meta charset="UTF-8" />
+		<title>Highway Chicanery</title>
+		<script type="text/javascript" src="phaser.min.js"></script>
+		<script type="text/javascript" src="Game.js"></script>
+		<script type="text/javascript" src="Menu.js"></script>
+		<script type="text/javascript" src="Controls.js"></script>
+		<script type="text/javascript" src="Scoreboard.js"></script>
+		<script type="text/javascript" src="GameOver.js"></script>
+		<style type="text/css">
+			body {
+				margin: 0;
+			}
+		</style>
+	</head>
+	<body>
+		<script>
+		(function() {
+			var game = new Phaser.Game(800, 600, Phaser.AUTO, '');
+			game.state.add('Menu', Menu);
+			game.state.add('Controls', Controls);
+			game.state.add('Scoreboard', Scoreboard);
+			game.state.add('GameOver', GameOver);
+			game.state.add('Game', Game);
+			game.state.start('Menu');
+		})();
+		</script>
+	</body>
+</html>
